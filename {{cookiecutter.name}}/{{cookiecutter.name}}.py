@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Docstring of the spider."""
+"""Documentation of the spider."""
 
 import argparse
 
@@ -9,10 +9,10 @@ import scrapy.crawler
 import scrapy.settings
 
 parser = argparse.ArgumentParser(description=__doc__)
-parser.add_argument('-l', '--log', default='INFO', help='log level')
+parser.add_argument('-l', '--level', default='INFO', help='log level')
 parser.add_argument('-f', '--format', default='csv', help='feed format')
-parser.add_argument('-o', '--output', default='data.csv', help='feed uri')
-parser.add_argument('-j', '--threads', type=int, default=16, help='concurrent')
+parser.add_argument('-o', '--output', default='data.csv', help='feed output')
+parser.add_argument('-j', '--thread', type=int, default=16, help='concurrent')
 parser.add_argument('-c', '--cache', action='store_true', help='cache enabled')
 
 
