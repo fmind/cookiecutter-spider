@@ -11,7 +11,7 @@ import scrapy.settings
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("-l", "--level", default="INFO", help="log level")
 parser.add_argument("-f", "--format", default="csv", help="feed format")
-parser.add_argument("-o", "--output", default="data.csv", help="feed output")
+parser.add_argument("-o", "--output", default="data.csv", help="feed uri")
 parser.add_argument("-j", "--thread", type=int, default=16, help="concurrent")
 parser.add_argument("-c", "--cache", action="store_true", help="cache enabled")
 
@@ -34,11 +34,11 @@ def main(args=None):
 
     settings = scrapy.settings.Settings(
         {
-            "LOG_LEVEL": opts.log,
+            "LOG_LEVEL": opts.level,
             "FEED_URI": opts.output,
             "FEED_FORMAT": opts.format,
             "HTTPCACHE_ENABLED": opts.cache,
-            "CONCURRENT_REQUESTS": opts.threads,
+            "CONCURRENT_REQUESTS": opts.thread,
         }
     )
 
