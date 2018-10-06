@@ -11,7 +11,7 @@ import scrapy.settings
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("-l", "--level", default="INFO", help="log level")
 parser.add_argument("-f", "--format", default="csv", help="feed format")
-parser.add_argument("-o", "--output", default="data.csv", help="feed uri")
+parser.add_argument("-o", "--output", default="items.csv", help="feed uri")
 parser.add_argument("-j", "--thread", type=int, default=16, help="concurrent")
 parser.add_argument("-c", "--cache", action="store_true", help="cache enabled")
 
