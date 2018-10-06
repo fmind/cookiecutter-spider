@@ -1,1 +1,0 @@
-# Python Spider Template
