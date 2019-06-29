@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 """Documentation of the spider."""
 
 import argparse
@@ -32,15 +33,13 @@ class Spider(scrapy.Spider):
 def main(args=None):
     opts = parser.parse_args(args)
 
-    settings = scrapy.settings.Settings(
-        {
-            "LOG_LEVEL": opts.level,
-            "FEED_URI": opts.output,
-            "FEED_FORMAT": opts.format,
-            "HTTPCACHE_ENABLED": opts.cache,
-            "CONCURRENT_REQUESTS": opts.thread,
-        }
-    )
+    settings = scrapy.settings.Settings({
+        "LOG_LEVEL": opts.level,
+        "FEED_URI": opts.output,
+        "FEED_FORMAT": opts.format,
+        "HTTPCACHE_ENABLED": opts.cache,
+        "CONCURRENT_REQUESTS": opts.thread,
+    })
 
     process = scrapy.crawler.CrawlerProcess(settings)
     process.crawl(Spider)
